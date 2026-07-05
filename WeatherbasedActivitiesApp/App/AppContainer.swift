@@ -28,6 +28,12 @@ class AppContainer {
         }
     }
     
-    
+    func makeCitySearchViewModel() -> CitySearchViewModel {
+        CitySearchViewModel(searchCityUseCase: searchCityUseCase)
+    }
+
+    func makeActivityListViewModel(for city: CityModel) -> ActivityListViewModel {
+        ActivityListViewModel(cityModel: city, rankActivitiesUseCase: makeRankActivitiesUseCase())
+    }
 
 }

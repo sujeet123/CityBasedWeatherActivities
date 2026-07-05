@@ -29,9 +29,28 @@
 		BA12889E2FF925290081FBAB /* WeatherbasedActivitiesAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherbasedActivitiesAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BA1289B72FFA9DA00081FBAB /* Exceptions for "WeatherbasedActivitiesApp" folder in "WeatherbasedActivitiesAppUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Presentation/ActivityList/ActivityListView.swift,
+				Presentation/ActivityList/ActivityListViewModel.swift,
+				Presentation/CitySearch/CitySearchView.swift,
+				Presentation/CitySearch/CitySearchViewModel.swift,
+				Presentation/Component/ActivityRowView.swift,
+				Presentation/Component/ErrorView.swift,
+				Presentation/Component/LoadingView.swift,
+			);
+			target = BA12889D2FF925290081FBAB /* WeatherbasedActivitiesAppUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		BA1288872FF925250081FBAB /* WeatherbasedActivitiesApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BA1289B72FFA9DA00081FBAB /* Exceptions for "WeatherbasedActivitiesApp" folder in "WeatherbasedActivitiesAppUITests" target */,
+			);
 			path = WeatherbasedActivitiesApp;
 			sourceTree = "<group>";
 		};

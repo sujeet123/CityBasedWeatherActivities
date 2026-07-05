@@ -10,6 +10,11 @@ import Foundation
 struct DailyWeatherForecastResponseModelDTO: Codable {
     let daily: DailyWeatherDetailsDTO
     let timezone: String?
+    private lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        return formatter
+    }()
 }
 
 struct DailyWeatherDetailsDTO: Codable {
@@ -43,12 +48,10 @@ enum ForecastMappingError: Error {
 }
 
 extension DailyWeatherForecastResponseModelDTO {
-    func toDomain() throws -> [DailyWeatherForecastModel] {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MM-yyyy"
-        formatter.timeZone = TimeZone(identifier: getTimezone())
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        
+    
+    mutating func toDomain() throws -> [DailyWeatherForecastModel] {
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = TimeZone(identifier: getTimezone())
         let count = daily.time.count
         guard daily.weathercode.count == count,
               daily.temperature2mMax.count == count,
@@ -64,7 +67,7 @@ extension DailyWeatherForecastResponseModelDTO {
         results.reserveCapacity(count)
         
         for index in 0..<count {
-            guard let date = formatter.date(from: daily.time[index]) else {
+            guard let date = dateFormatter.date(from: daily.time[index]) else {
                 throw ForecastMappingError.malformedDate(daily.time[index])
             }
             let precipitationProbability = daily.precipitationProbabilityMax.flatMap {

@@ -10,7 +10,7 @@ import Foundation
 struct DailyWeatherDetailsRepositoryImp: DailyWeatherForecastRepository {
     let apiClient: APIClient
     func getDailyWeatherForecastDetails(for city: CityModel, days: Int) async throws -> [DailyWeatherForecastModel] {
-        let response: DailyWeatherForecastResponseModelDTO = try await apiClient.get(
+        var response: DailyWeatherForecastResponseModelDTO = try await apiClient.get(
             .forecast(latitude: city.latitude,
                       longitude: city.longitude,
                       timezone: city.timezone,
