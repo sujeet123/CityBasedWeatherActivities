@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol CityRepository {
+    func searchCityByName(cityName: String) async throws -> [CityModel]
+}

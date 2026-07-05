@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol DailyWeatherForecastRepository {
+    func getDailyWeatherForecastDetails(for city: CityModel, days: Int) async throws -> [DailyWeatherForecastModel]
+}
+

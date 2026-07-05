@@ -7,18 +7,19 @@
 
 import Foundation
 
-protocol RankedAcitvityUseCase {
+protocol RankActivitiesUseCase {
     func execute(cityModel: CityModel) async throws -> [ActivityRecommendation]
 }
 
-struct RankedAcitvityUseCaseImpl: RankedAcitvityUseCase {
+struct RankActivitiesUseCaseImpl: RankActivitiesUseCase {
     static let fetchforcastForNumberofDays = 7
     let dailyWeatherforcastReposittory: DailyWeatherForecastRepository
     let activityRecomendationSystem: ActivityRankingSystem
+    
     /// Fetches the 7-day forecast for a city
-    /// activity recommendations via the (pure, synchronous) ranking engine.
+    /// Also get ranking system
     func execute(cityModel: CityModel) async throws -> [ActivityRecommendation] {
-        let dailyWeatherForecast = try await dailyWeatherforcastReposittory.getDailyWeatherForecastDetails(for: cityModel, days: RankedAcitvityUseCaseImpl.fetchforcastForNumberofDays)
+        let dailyWeatherForecast = try await dailyWeatherforcastReposittory.getDailyWeatherForecastDetails(for: cityModel, days: Self.fetchforcastForNumberofDays)
         
         guard !dailyWeatherForecast.isEmpty else { throw AppError.noForecastData }
         

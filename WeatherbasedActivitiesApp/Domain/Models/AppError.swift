@@ -14,6 +14,8 @@ enum AppError: Error, Equatable, LocalizedError {
     case server(statusCode: Int)
     case decodingFailed
     case noResults
+    case noForecastData
+    case inValidURL
     case unknown(String)
 
     var errorDescription: String? {
@@ -28,6 +30,10 @@ enum AppError: Error, Equatable, LocalizedError {
             return "We couldn't understand the response from the weather service."
         case .noResults:
             return "No cities matched your search."
+        case .noForecastData:
+            return "No weather forcast details available"
+        case .inValidURL:
+            return "Error code 500 - Please connect with customer care representative"
         case .unknown(let message):
             return message
         }
