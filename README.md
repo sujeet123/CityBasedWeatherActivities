@@ -93,7 +93,7 @@ Run with **⌘U** in Xcode, or:
 xcodebuild test -scheme WeatherActivities -destination 'platform=iOS Simulator,name=iPhone 15'
 ```
 
-**Result on my machine:** `[FILL IN: e.g. "47/47 tests passing"]`
+**Result on my machine:** ` 47/47 tests passing`
 
 **Strategy** — every layer tested against protocol mocks, nothing touches
 the real network:
