@@ -23,7 +23,8 @@ score. Two Open-Meteo endpoints, no other data source, no API key required.
 | Dependencies | none — no third-party packages |
 | Testing | XCTest |
 
-I chose SwiftUI + plain async/await for this project over UIKIT here since this framework best suited with reactive programming and latest swift concurrecny framework.
+Why SwiftUI + Async/Await?
+I chose SwiftUI combined with native async/await for this project because it perfectly aligns with modern reactive programming principles. This combination eliminates extensive boilerplate code and natively integrates with Swift 6's strict concurrency framework to ensure a responsive, thread-safe user experience.
 
 ## c. Architecture
 
