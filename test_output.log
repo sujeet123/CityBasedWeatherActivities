@@ -1,0 +1,22 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild test -scheme WeatherbasedActivitiesApp -configuration Debug
+
+2026-07-06 09:06:17.250 xcodebuild[99692:3592973] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:iOS, id:dvtdevice-DVTiPhonePlaceholder-iphoneos:placeholder, name:Any iOS Device }
+{ platform:iOS Simulator, id:dvtdevice-DVTiOSDeviceSimulatorPlaceholder-iphonesimulator:placeholder, name:Any iOS Simulator Device }
+{ platform:iOS, arch:arm64, id:00008140-001E64813622801C, name:Sujeet iphone 16e }
+{ platform:iOS Simulator, arch:x86_64, id:00B86DCD-30FA-431F-8064-09C2E8CA92F2, OS:26.3.1, name:iPad (A16) }
+{ platform:iOS Simulator, arch:x86_64, id:186CC207-1926-42C0-8BE9-2AD74E5D2C42, OS:26.3.1, name:iPad Air 11-inch (M3) }
+{ platform:iOS Simulator, arch:x86_64, id:14262037-1CE7-42B9-82AE-6645F22C7568, OS:26.3.1, name:iPad Air 13-inch (M3) }
+{ platform:iOS Simulator, arch:x86_64, id:ADE94112-C7E1-470E-A0D2-B09B18C9F1A1, OS:26.3.1, name:iPad Pro 11-inch (M5) }
+{ platform:iOS Simulator, arch:x86_64, id:62698BF5-28EA-466E-A398-22C770C5C549, OS:26.3.1, name:iPad Pro 13-inch (M5) }
+{ platform:iOS Simulator, arch:x86_64, id:1F8F819B-303C-44E3-9155-374C1C440A77, OS:26.3.1, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, arch:x86_64, id:7309CB16-F9E8-4B7D-BF2A-45C249AE5611, OS:26.3.1, name:iPhone 16e }
+{ platform:iOS Simulator, arch:x86_64, id:982831ED-BB27-47E0-8A5E-BDCBF92027F8, OS:26.3.1, name:iPhone 17 }
+{ platform:iOS Simulator, arch:x86_64, id:E8B149D1-48D9-4790-892C-93EB09A8ACD7, OS:26.3.1, name:iPhone 17 Pro }
+{ platform:iOS Simulator, arch:x86_64, id:79D54A72-3006-4EF3-84A5-9620143EE23F, OS:26.3.1, name:iPhone 17 Pro Max }
+{ platform:iOS Simulator, arch:x86_64, id:503A0119-0B90-4901-A75A-C3401E3F2F93, OS:26.3.1, name:iPhone Air }
+2026-07-06 09:06:17.807 xcodebuild[99692:3592973] Writing error result bundle to /var/folders/3t/0yzs5y1x7bq7ncpb_p3zrp8c0000gn/T/ResultBundle_2026-06-07_09-06-0017.xcresult
+xcodebuild: error: Failed to build project WeatherbasedActivitiesApp with scheme WeatherbasedActivitiesApp.: Cannot test target “WeatherbasedActivitiesAppTests” on “Any iOS Device”: Tests must be run on a concrete device
+Cannot test target “WeatherbasedActivitiesAppUITests” on “Any iOS Device”: Tests must be run on a concrete device

@@ -10,11 +10,6 @@ import Foundation
 struct DailyWeatherForecastResponseModelDTO: Codable {
     let daily: DailyWeatherDetailsDTO
     let timezone: String?
-    private lazy var dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        return formatter
-    }()
 }
 
 struct DailyWeatherDetailsDTO: Codable {
@@ -49,7 +44,9 @@ enum ForecastMappingError: Error {
 
 extension DailyWeatherForecastResponseModelDTO {
     
-    mutating func toDomain() throws -> [DailyWeatherForecastModel] {
+     func toDomain() throws -> [DailyWeatherForecastModel] {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateFormatter.timeZone = TimeZone(identifier: getTimezone())
         let count = daily.time.count
