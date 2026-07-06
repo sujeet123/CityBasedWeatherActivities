@@ -16,7 +16,7 @@ struct SearchCityUseCaseImpl: SearchCityUseCase {
     func execute(cityName: String) async throws -> [CityModel] {
         let trimmed = cityName.trimmingCharacters(in: .whitespacesAndNewlines)
         guard trimmed.count >= 2 else { return [] }
-        return try await cityRepository.searchCityByName(cityName: cityName)
+        return try await cityRepository.searchCityByName(cityName: trimmed)
     }
 }
 

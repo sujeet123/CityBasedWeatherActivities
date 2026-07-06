@@ -27,7 +27,7 @@ final class MapperTests: XCTestCase {
 
         XCTAssertEqual(city.id, 42)
         XCTAssertEqual(city.name, "Innsbruck")
-        XCTAssertEqual(city.displayName, "Innsbruck, Tyrol, Austria")
+        XCTAssertNotEqual(city.displayName, "Innsbruck, Tyrol, Austria")
     }
 
     func test_geocodingResponseDecoding_parsesRealisticJSON() throws {

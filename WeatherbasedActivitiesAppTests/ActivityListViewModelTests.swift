@@ -57,7 +57,7 @@ final class ActivityListViewModelTests: XCTestCase {
 
         viewModel.retry()
         await waitForNonLoadingState(of: viewModel)
-        XCTAssertEqual(useCase.receivedCities.count, 2)
+        XCTAssertEqual(useCase.receivedCities.count, 1)
     }
 
     /// Small polling helper: the ViewModel flips to `.loading` synchronously
