@@ -41,10 +41,10 @@ Data (DTOs, Networking, Repositories)
 ```
 
 - **Domain** — pure Swift, `Foundation`-only, no networking/UI imports.
-  Defines the protocols (`GeocodingServiceProtocol`, `WeatherServiceProtocol`)
+  Defines the protocols (`CityRepository`, `DailyWeatherForecastRepository`)
   that Data implements, the use cases (`SearchCityUseCase`,
   `RankActivitiesUseCase`) that Presentation calls, and
-  `ActivityRankingEngine` — a synchronous, side-effect-free scorer with no
+  `ActivityRankingSystem` — a synchronous, side-effect-free scorer with no
   network dependency at all.
 - **Data** — `Endpoint` (URL building), `APIClientProtocol` /
   `URLSessionAPIClient`, DTOs matching the wire format, and repositories
