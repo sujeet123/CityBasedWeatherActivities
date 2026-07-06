@@ -34,7 +34,7 @@ Clean Architecture-flavored MVVM, four layers, strict dependency direction:
 Presentation (SwiftUI Views + ViewModels)
       │  depends on
       ▼
-Domain (Models, Protocols, Use Cases, Ranking Engine)
+Domain (Models, Protocols, Use Cases, Ranking System)
       ▲  implements
       │
 Data (DTOs, Networking, Repositories)
