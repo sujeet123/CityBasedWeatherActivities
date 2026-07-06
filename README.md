@@ -72,20 +72,6 @@ ActivityListView ⇄ ActivityListViewModel → RankActivitiesUseCase ─┬→ D
 
 ## d. Build & run
 
-No `.xcodeproj` is committed — project files are binary, don't diff
-cleanly, and there are no external dependencies to justify one. To run:
-
-1. Xcode → **File → New → Project → iOS → App**, Product Name
-   `WeatherActivities`, Interface **SwiftUI**.
-2. Delete the generated `ContentView.swift` / default
-   `WeatherActivitiesApp.swift`.
-3. Drag in `WeatherActivities/` (app target) and `WeatherActivitiesTests/`
-   (test target) — "Copy items if needed" checked.
-4. Point the target's Info.plist setting at `Resources/Info.plist`.
-5. Select an iOS 17+ simulator, **⌘R**.
-
-No API keys or config needed. Requires an internet connection at runtime —
-there's no bundled/offline fixture data.
 
 ## e. Testing
 
